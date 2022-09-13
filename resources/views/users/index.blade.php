@@ -91,7 +91,7 @@
                   <li class="nav-item">
                     <a class="nav-link" data-toggle="collapse" href="#laravelExample" aria-expanded="true">
                       <i><img style="width:25px" src="{{ asset('material') }}/img/laravel.svg"></i>
-                      <p>{{ __('Laravel Examples') }}
+                      <p>{{ __('User Management') }}
                         <b class="caret"></b>
                       </p>
                     </a>
