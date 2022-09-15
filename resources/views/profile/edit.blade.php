@@ -38,6 +38,20 @@
                     </div>
                   </div>
                 </div>
+
+
+                <div class="row">
+                    <label class="col-sm-2 col-form-label">{{ __('Phone') }}</label>
+                    <div class="col-sm-7">
+                      <div class="form-group{{ $errors->has('phone') ? ' has-danger' : '' }}">
+                        <input class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" name="phone" id="input-phone" type="text" placeholder="{{ __('Phone') }}" value="{{ old('phone', auth()->user()->phone) }}" required="true" aria-required="true"/>
+                        @if ($errors->has('phone'))
+                          <span id="phone-error" class="error text-danger" for="input-phone">{{ $errors->first('phone') }}</span>
+                        @endif
+                      </div>
+                    </div>
+                  </div>
+
                 <div class="row">
                   <label class="col-sm-2 col-form-label">{{ __('Email') }}</label>
                   <div class="col-sm-7">

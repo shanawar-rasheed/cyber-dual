@@ -44,13 +44,13 @@
           </ul>
         </div>
       </li>
-      {{-- <li class="nav-item{{ $activePage == 'table' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('table') }}">
+      <li class="nav-item{{ $activePage == 'contest' ? ' active' : '' }}">
+        <a class="nav-link" href="{{ route('contests.index') }}">
           <i class="material-icons">content_paste</i>
-            <p>{{ __('Table List') }}</p>
+            <p>{{ __('Contest Management') }}</p>
         </a>
       </li>
-      <li class="nav-item{{ $activePage == 'typography' ? ' active' : '' }}">
+      {{-- <li class="nav-item{{ $activePage == 'typography' ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('typography') }}">
           <i class="material-icons">library_books</i>
             <p>{{ __('Typography') }}</p>

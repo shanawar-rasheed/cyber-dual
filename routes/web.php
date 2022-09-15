@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ContestController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -52,6 +52,9 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('upgrade', function () {
 		return view('pages.upgrade');
 	})->name('upgrade');
+
+
+Route::resource('contests', ContestController::class);
 });
 
 Route::group(['middleware' => 'auth'], function () {
