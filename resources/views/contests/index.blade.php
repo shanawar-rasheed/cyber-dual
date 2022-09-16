@@ -26,12 +26,12 @@
                                             @endif
 
                                             <table class="table table-bordered">
-                                                <tr>
+                                                <tr class="text-center">
                                                     <th>No</th>
                                                     <th>Image</th>
                                                     <th>Name</th>
                                                     <th>Details</th>
-                                                    <th width="280px">Action</th>
+                                                    <th width="320px">Action</th>
                                                 </tr>
                                                 @foreach ($contests as $contest)
                                                 <tr>
@@ -39,7 +39,7 @@
                                                     <td><img src="/image/{{ $contest->image }}" width="100px"></td>
                                                     <td>{{ $contest->name }}</td>
                                                     <td>{{ $contest->detail }}</td>
-                                                    <td>
+                                                    <td  >
                                                         <form action="{{ route('contests.destroy',$contest->id) }}" method="POST">
 
                                                             <a class="btn btn-success" href="{{ route('contests.show',$contest->id) }}">Show</a>
