@@ -97,7 +97,7 @@ class ContestController extends Controller
                 'name' => 'required',
                 'detail' => 'required',
                 'date' => 'required',
-                'status' => 'required'
+                // 'status' => 'required'
             ]);
 
             $input = $request->all();
