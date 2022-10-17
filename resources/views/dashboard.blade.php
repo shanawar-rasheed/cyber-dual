@@ -3,14 +3,14 @@
 @section('content')
   <div class="content">
     <div class="container-fluid">
-      <div class="row">
+      {{-- <div class="row">
         <div class="col-lg-3 col-md-6 col-sm-6">
           <div class="card card-stats">
             <div class="card-header card-header-warning card-header-icon">
               <div class="card-icon">
                 <i class="material-icons">content_copy</i>
               </div>
-              <p class="card-category">Used Space</p>
+              <p class="card-category"></p>
               <h3 class="card-title">49/50
                 <small>GB</small>
               </h3>
@@ -71,26 +71,35 @@
             </div>
           </div>
         </div>
-      </div>
-      {{-- <div class="row">
-        <div class="col-md-4">
+      </div> --}}
+
+      <div class="row">
+        @foreach ($contests as $contest)
+
+
+        <div class="col-md-3">
           <div class="card card-chart">
-            <div class="card-header card-header-success">
-              <div class="ct-chart" id="dailySalesChart"></div>
+            <div class="card-header ">
+                <img src="{{ asset('image/'.$contest->image) }}" width="200px" height="200px" alt="Image">
+
             </div>
             <div class="card-body">
-              <h4 class="card-title">Daily Sales</h4>
+              <h4 class="card-title">{{ $contest->name }}</h4>
               <p class="card-category">
-                <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> increase in today sales.</p>
+                {{ $contest->detail }}</p>
             </div>
             <div class="card-footer">
               <div class="stats">
-                <i class="material-icons">access_time</i> updated 4 minutes ago
+                <i class="material-icons">access_time</i>{{$contest->date}}
               </div>
             </div>
           </div>
         </div>
-        <div class="col-md-4">
+        @endforeach
+
+
+
+        {{-- <div class="col-md-4">
           <div class="card card-chart">
             <div class="card-header card-header-warning">
               <div class="ct-chart" id="websiteViewsChart"></div>
@@ -121,9 +130,9 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> --}}
       </div>
-      <div class="row">
+      {{-- <div class="row">
         <div class="col-lg-6 col-md-12">
           <div class="card">
             <div class="card-header card-header-tabs card-header-primary">

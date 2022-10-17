@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Contest;
 
 class HomeController extends Controller
 {
@@ -21,6 +22,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+
+        $contests = Contest::all();
+        //  dd($contests);
+
+        return view('dashboard',compact('contests'));
     }
 }

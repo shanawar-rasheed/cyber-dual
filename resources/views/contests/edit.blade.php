@@ -32,15 +32,16 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <form action="" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('contests.update', $contest->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
 
-                         <div class="row">
+                        <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
                                     <strong>Name:</strong>
-                                    <input type="text" name="name" value="{{ $contest->name }}" class="form-control" placeholder="Name">
+                                    <input type="text" name="name" value="{{ $contest->name }}" class="form-control"
+                                        placeholder="Name">
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-12">
@@ -49,56 +50,43 @@
                                     <textarea class="form-control" style="height:150px" name="detail" placeholder="Detail">{{ $contest->detail }}</textarea>
                                 </div>
                             </div>
+
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
-                                    {{-- <strong>Image:</strong> --}}
-                                    <img src="/image/{{ $contest->image }}" width="300px">
-
-
+                                    <strong>Date:</strong>
+                                    <input type="date" name="date" class="form-control" placeholder="Date"
+                                        value="{{ $contest->date }}">
                                 </div>
-                                <input type="file" name="image" class="form-control" placeholder="image">
                             </div>
-
-
-                            {{-- <div class="col-xs-12 col-sm-12 col-md-12 ">
-                                <div class="form-group text-center">
-                                    <strong>Image:</strong>
-                                    <img src="/image/{{ $contest->image }}" width="300px">
-                                    <input type="file" name="image" class="form-control" placeholder="image" value="/image/{{ $contest->image }}">
-                                </div>
-
-                                <div class="fileinput fileinput-new text-center" data-provides="fileinput">
-                                    <div class="fileinput-new thumbnail img-raised">
-                                        <img src="http://style.anu.edu.au/_anu/4/images/placeholders/person_8x10.png" alt="...">
-                                    </div>
-                                    <div class="fileinput-preview fileinput-exists thumbnail img-raised"></div>
-                                    <div>
-                                        <span class="btn btn-raised btn-round btn-default btn-file">
-                                            <span class="fileinput-new">Select image</span>
-                                            <span class="fileinput-exists">Change</span>
-                                            <input type="file" name="image" class="form-control"  />
-                                        </span>
-                                        <a href="#pablo" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> Remove</a>
-                                    </div>
-                                </div>
-
-                            </div> --}}
-
-
-
-
-
-
 
                             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                              <button type="submit" class="btn btn-success">Submit</button>
+                                {{-- <div class="form-group mb-3"> --}}
+                                    <strong>Image</strong>
+                                    <input type="file" name="image" class="form-control">
+                                    <img src="{{ asset('image/'.$contest->image) }}" width="200px" height="200px" alt="Image">
+                                {{-- </div> --}}
+
+
                             </div>
+
                         </div>
 
-                    </form>
+
+
+
+
+
+
+
+                        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                            <button type="submit" class="btn btn-success">Submit</button>
+                        </div>
                 </div>
+
+                </form>
             </div>
         </div>
+    </div>
     </div>
 
 

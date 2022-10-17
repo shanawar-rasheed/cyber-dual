@@ -130,4 +130,7 @@ class ContestController extends Controller
         return redirect()->route('contests.index')
                         ->with('success','Contest deleted successfully');
     }
+
+
+
 }
